@@ -205,7 +205,7 @@ function init_test_options {
 
     get_pull_xargs "$PULL_DESCRIPTION" $PROFILE # see if the PR description overrides any of the defaults 
 
-    JAVA_VERSION=$(java -version 2>&1 | grep "java version" | cut -d\  -f3 | tr -d '"' | tr -d '[:space:]')
+    JAVA_VERSION=$(java -version 2>&1 | grep "\(java\|openjdk\) version" | cut -d\  -f3 | tr -d '"' | tr -d '[:space:]')
 }
 
 function comment_on_pull
